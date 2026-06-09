@@ -1,0 +1,17 @@
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/bin/Debug/net10.0/Infrastructure.deps.json
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/bin/Debug/net10.0/Infrastructure.dll
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/bin/Debug/net10.0/Infrastructure.pdb
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/bin/Debug/net10.0/Application.dll
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/bin/Debug/net10.0/Domain.dll
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/bin/Debug/net10.0/Application.pdb
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/bin/Debug/net10.0/Domain.pdb
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastructure.csproj.AssemblyReference.cache
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastructure.AssemblyInfoInputs.cache
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastructure.AssemblyInfo.cs
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastructure.csproj.CoreCompileInputs.cache
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastr.15EFFBFE.Up2Date
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastructure.dll
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/refint/Infrastructure.dll
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/Infrastructure.pdb
+/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/obj/Debug/net10.0/ref/Infrastructure.dll

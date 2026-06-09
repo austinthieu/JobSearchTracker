@@ -1,0 +1,11 @@
+/home/cync/Work/tries/JobSearchTracker/src/Domain/bin/Debug/net10.0/Domain.deps.json
+/home/cync/Work/tries/JobSearchTracker/src/Domain/bin/Debug/net10.0/Domain.dll
+/home/cync/Work/tries/JobSearchTracker/src/Domain/bin/Debug/net10.0/Domain.pdb
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/Domain.AssemblyInfoInputs.cache
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/Domain.AssemblyInfo.cs
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/Domain.csproj.CoreCompileInputs.cache
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/Domain.dll
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/refint/Domain.dll
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/Domain.pdb
+/home/cync/Work/tries/JobSearchTracker/src/Domain/obj/Debug/net10.0/ref/Domain.dll
