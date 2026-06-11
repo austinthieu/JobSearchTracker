@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kA47b/YCD30=",
+  "dgSpecHash": "NtLPNLdE80Y=",
   "success": true,
   "projectFilePath": "/home/cync/Work/tries/JobSearchTracker/src/Domain/Domain.csproj",
-  "expectedPackageFiles": [
-    "/home/cync/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
