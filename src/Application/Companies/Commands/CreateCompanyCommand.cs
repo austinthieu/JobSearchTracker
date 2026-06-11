@@ -8,7 +8,7 @@ public record CreateCompanyCommand(string Name, string? Website, string? Notes) 
 
 public class CreateCompanyHandler : IRequestHandler<CreateCompanyCommand, Guid>
 {
-  public readonly IApplicationDbContext _context;
+  private readonly IApplicationDbContext _context;
 
   public CreateCompanyHandler(IApplicationDbContext context) => _context = context;
 
