@@ -5,6 +5,7 @@ namespace Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {
+  DbSet<User> User { get; }
   DbSet<Company> Companies { get; }
   DbSet<JobApplication> JobApplications { get; }
   DbSet<Interview> Interviews { get; }

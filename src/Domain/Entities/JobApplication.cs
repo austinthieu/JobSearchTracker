@@ -13,6 +13,8 @@ public class JobApplication : Entity
   public string? Source { get; private set; } // LinkedIn, Indeed, referral, etc.
   public DateTime CreatedAt { get; private set; }
   public DateTime UpdatedAt { get; private set; }
+  public Guid UserId { get; private set; }
+  public User User { get; private set; } = null!;
 
   // Foreign Keys
   public Guid CompanyId { get; private set; }
@@ -27,7 +29,7 @@ public class JobApplication : Entity
 
   private JobApplication() { } // For EF Core
 
-  public JobApplication(string position, Guid companyId, string? jobUrl, string? source, decimal? salaryMin, decimal? salaryMax)
+  public JobApplication(string position, Guid companyId, string? jobUrl, string? source, decimal? salaryMin, decimal? salaryMax, Guid userId)
   {
     Position = position;
     CompanyId = companyId;
@@ -36,6 +38,7 @@ public class JobApplication : Entity
     SalaryMin = salaryMin;
     SalaryMax = salaryMax;
     Status = ApplicationStatus.Saved;
+    UserId = userId;
     CreatedAt = DateTime.UtcNow;
     UpdatedAt = DateTime.UtcNow;
   }
