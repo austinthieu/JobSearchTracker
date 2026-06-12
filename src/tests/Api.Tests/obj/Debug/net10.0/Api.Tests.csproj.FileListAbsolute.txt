@@ -109,8 +109,6 @@
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/obj/Debug/net10.0/Api.Tests.pdb
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/obj/Debug/net10.0/Api.Tests.genruntimeconfig.cache
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/obj/Debug/net10.0/ref/Api.Tests.dll
-/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/AutoMapper.dll
-/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/FluentValidation.dll
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/FluentValidation.DependencyInjectionExtensions.dll
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/MediatR.dll

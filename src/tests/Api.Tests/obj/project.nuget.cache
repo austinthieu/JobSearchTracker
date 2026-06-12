@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "hdaJX2NHDog=",
+  "dgSpecHash": "ApgUd2oErl0=",
   "success": true,
   "projectFilePath": "/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/Api.Tests.csproj",
   "expectedPackageFiles": [
-    "/home/cync/.nuget/packages/automapper/16.1.1/automapper.16.1.1.nupkg.sha512",
-    "/home/cync/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/cync/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.1.1/fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
@@ -40,18 +38,5 @@
     "/home/cync/.nuget/packages/xunit.extensibility.execution/2.9.3/xunit.extensibility.execution.2.9.3.nupkg.sha512",
     "/home/cync/.nuget/packages/xunit.runner.visualstudio/3.1.4/xunit.runner.visualstudio.3.1.4.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 16.1.1 was resolved.",
-      "projectPath": "/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/Api.Tests.csproj",
-      "warningLevel": 1,
-      "filePath": "/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/Api.Tests.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

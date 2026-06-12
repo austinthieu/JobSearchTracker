@@ -8,6 +8,7 @@ public class Company : Entity
   public string? Website { get; private set; }
   public string? Notes { get; private set; }
   public DateTime CreatedAt { get; private set; }
+  public DateTime UpdatedAt { get; private set; }
 
   // Navigation
   public ICollection<JobApplication> JobApplications { get; private set; } = [];
@@ -20,6 +21,7 @@ public class Company : Entity
     Website = website;
     Notes = notes;
     CreatedAt = DateTime.UtcNow;
+    UpdatedAt = DateTime.UtcNow;
   }
 
   public void Update(string name, string? website, string? notes)
@@ -27,5 +29,6 @@ public class Company : Entity
     Name = name;
     Website = website;
     Notes = notes;
+    UpdatedAt = DateTime.UtcNow;
   }
 }

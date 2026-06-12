@@ -1,7 +1,5 @@
 using Application.Common.Interfaces;
 using Application.Companies.DTOs;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,21 +10,21 @@ public record GetCompaniesQuery : IRequest<List<CompanyDto>>;
 public class GetCompaniesHandler : IRequestHandler<GetCompaniesQuery, List<CompanyDto>>
 {
   private readonly IApplicationDbContext _context;
-  private readonly IMapper _mapper;
 
-  public GetCompaniesHandler(IApplicationDbContext context, IMapper mapper)
-  {
-    _context = context;
-    _mapper = mapper;
-  }
+  public GetCompaniesHandler(IApplicationDbContext context) => _context = context;
 
   public async Task<List<CompanyDto>> Handle(GetCompaniesQuery request, CancellationToken ct)
   {
     return await _context.Companies
       .OrderBy(c => c.Name)
-      .ProjectTo<CompanyDto>(_mapper.ConfigurationProvider)
+      .Select(c => new CompanyDto
+      {
+        Id = c.Id,
+        Name = c.Name,
+        Website = c.Website,
+        Notes = c.Notes,
+        CreatedAt = c.CreatedAt
+      })
       .ToListAsync(ct);
   }
 }
-
-
