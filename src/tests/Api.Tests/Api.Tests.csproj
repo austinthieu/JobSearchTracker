@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);NU1903</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,5 +22,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\API\Api.csproj" />
   </ItemGroup>
+
 
 </Project>

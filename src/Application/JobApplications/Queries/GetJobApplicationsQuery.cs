@@ -10,12 +10,18 @@ public record GetJobApplicationsQuery : IRequest<List<ApplicationDto>>;
 public class GetJobApplicationsHandler : IRequestHandler<GetJobApplicationsQuery, List<ApplicationDto>>
 {
   private readonly IApplicationDbContext _context;
+  private readonly ICurrentUserService _currentUser;
 
-  public GetJobApplicationsHandler(IApplicationDbContext context) => _context = context;
+  public GetJobApplicationsHandler(IApplicationDbContext context, ICurrentUserService currentUser)
+  {
+    _context = context;
+    _currentUser = currentUser;
+  }
 
   public async Task<List<ApplicationDto>> Handle(GetJobApplicationsQuery request, CancellationToken ct)
   {
     return await _context.JobApplications
+      .Where(c => c.UserId == _currentUser.UserId)
       .OrderBy(c => c.Id)
       .Select(c => new ApplicationDto
       {
