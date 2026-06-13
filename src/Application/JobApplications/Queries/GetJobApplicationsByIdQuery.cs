@@ -21,7 +21,7 @@ public class GetJobApplicationByIdHandler : IRequestHandler<GetJobApplicationByI
   public async Task<ApplicationDto?> Handle(GetJobApplicationByIdQuery request, CancellationToken ct)
   {
     var jobApplication = await _context.JobApplications.
-      FirstOrDefaultAsync(c => c.UserId == request.Id && c.UserId == _currentUser.UserId);
+      FirstOrDefaultAsync(c => c.Id == request.Id && c.UserId == _currentUser.UserId, ct);
     return jobApplication is null ? null : new ApplicationDto
     {
       Id = jobApplication.Id,

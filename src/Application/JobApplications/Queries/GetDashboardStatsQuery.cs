@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.JobApplications.Queries;
 
-public record GetDashboardStatsQuery() : IRequest<DashboardDto?>;
+public record GetDashboardStatsQuery() : IRequest<DashboardDto>;
 
 public class GetDashboardStatsHandler : IRequestHandler<GetDashboardStatsQuery, DashboardDto>
 {
@@ -19,7 +19,7 @@ public class GetDashboardStatsHandler : IRequestHandler<GetDashboardStatsQuery, 
     _currentUser = currentUser;
   }
 
-  public async Task<DashboardDto?> Handle(GetDashboardStatsQuery request, CancellationToken ct)
+  public async Task<DashboardDto> Handle(GetDashboardStatsQuery request, CancellationToken ct)
   {
     var userId = _currentUser.UserId;
 
