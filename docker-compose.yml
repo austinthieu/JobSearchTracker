@@ -11,6 +11,13 @@ services:
       POSTGRES_DB: jobsearchtracker
     volumes:
       - pgdata:/var/lib/postgresql/data
+  api:
+    image: jobsearchtracker-api
+    environment:
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=jobsearchtracker;Username=jobuser;Password=jobpass"
+      Jwt__Key: "${JWT_KEY}"
+      Jwt__Issuer: "JobSearchTracker"
+      Jwt__Audience: "JobSearchTracker"
 
 volumes:
   pgdata:

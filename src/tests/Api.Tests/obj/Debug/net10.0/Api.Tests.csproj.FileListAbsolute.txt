@@ -120,3 +120,11 @@
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
 /home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/obj/Debug/net10.0/Api.Tests.sourcelink.json
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Microsoft.Bcl.Cryptography.dll
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Npgsql.dll
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll
