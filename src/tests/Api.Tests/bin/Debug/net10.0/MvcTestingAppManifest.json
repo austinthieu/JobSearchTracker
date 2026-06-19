@@ -1,0 +1,6 @@
+{
+  "Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/cync\/Work\/tries\/JobSearchTracker\/src\/API",
+  "Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/cync\/Work\/tries\/JobSearchTracker\/src\/Application",
+  "Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/cync\/Work\/tries\/JobSearchTracker\/src\/Domain",
+  "Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/cync\/Work\/tries\/JobSearchTracker\/src\/Infrastructure"
+}

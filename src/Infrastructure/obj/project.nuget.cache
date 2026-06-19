@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AKrf4jdnP1U=",
+  "dgSpecHash": "BfA0Fpb7EpU=",
   "success": true,
   "projectFilePath": "/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.9/microsoft.entityframeworkcore.abstractions.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.analyzers/10.0.9/microsoft.entityframeworkcore.analyzers.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.design/10.0.9/microsoft.entityframeworkcore.design.10.0.9.nupkg.sha512",
+    "/home/cync/.nuget/packages/microsoft.entityframeworkcore.inmemory/10.0.9/microsoft.entityframeworkcore.inmemory.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.relational/10.0.9/microsoft.entityframeworkcore.relational.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.extensions.caching.abstractions/10.0.9/microsoft.extensions.caching.abstractions.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.extensions.caching.memory/10.0.9/microsoft.extensions.caching.memory.10.0.9.nupkg.sha512",

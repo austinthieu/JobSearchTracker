@@ -18,7 +18,13 @@ public static class DependencyInjection
     )
     {
         var connectionString = configuration.GetConnectionString("Default");
-        services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(connectionString));
+        var useInMemory = configuration.GetValue<bool>("UseInMemoryDatabase");
+
+        if (useInMemory)
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseInMemoryDatabase("TestDB"));
+        else
+            services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(connectionString));
 
         services.AddScoped<IApplicationDbContext>(sp =>
             sp.GetRequiredService<ApplicationDbContext>()
@@ -28,14 +34,14 @@ public static class DependencyInjection
         services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddHttpContextAccessor();
 
-        var jwtKey = configuration["Jwt:Key"]!;
-        var jwtIssuer = configuration["Jwt:Issuer"]!;
-        var jwtAudience = configuration["Jwt:Audience"]!;
-
         services
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
+                var jwtKey = configuration["Jwt:Key"]!;
+                var jwtIssuer = configuration["Jwt:Issuer"]!;
+                var jwtAudience = configuration["Jwt:Audience"]!;
+
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
