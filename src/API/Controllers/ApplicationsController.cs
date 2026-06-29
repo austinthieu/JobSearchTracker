@@ -23,9 +23,9 @@ public class ApplicationsController : ControllerBase
     public ApplicationsController(ISender mediator) => _mediator = mediator;
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] int Page = 1, [FromQuery] int PageSize = 25)
     {
-        var applications = await _mediator.Send(new GetJobApplicationsQuery());
+        var applications = await _mediator.Send(new GetJobApplicationsQuery(Page, PageSize));
         return Ok(applications);
     }
 
@@ -85,24 +85,36 @@ public class ApplicationsController : ControllerBase
     public async Task<IActionResult> CreateInterview(Guid id, CreateInterviewRequest request)
     {
         if (!Enum.TryParse<InterviewType>(request.Type, true, out _))
-            return BadRequest(new
-            {
-                error = $"Invalid interview type. Valid values: {string.Join(", ", Enum.GetNames<InterviewType>())}",
-            });
+            return BadRequest(
+                new
+                {
+                    error = $"Invalid interview type. Valid values: {string.Join(", ", Enum.GetNames<InterviewType>())}",
+                }
+            );
 
         var command = new CreateInterviewCommand(
-            id, request.Type, request.ScheduledAt,
-            request.DurationMinutes, request.Location,
-            request.Interviewers, request.Notes
+            id,
+            request.Type,
+            request.ScheduledAt,
+            request.DurationMinutes,
+            request.Location,
+            request.Interviewers,
+            request.Notes
         );
         var interviewId = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetById), new { id }, new { interviewId });
     }
 
     [HttpPatch("{id:guid}/interviews/{interviewId:guid}/reschedule")]
-    public async Task<IActionResult> RescheduleInterview(Guid id, Guid interviewId, RescheduleRequest request)
+    public async Task<IActionResult> RescheduleInterview(
+        Guid id,
+        Guid interviewId,
+        RescheduleRequest request
+    )
     {
-        await _mediator.Send(new RescheduleInterviewCommand(id, interviewId, request.NewScheduledAt));
+        await _mediator.Send(
+            new RescheduleInterviewCommand(id, interviewId, request.NewScheduledAt)
+        );
         return NoContent();
     }
 
@@ -126,8 +138,12 @@ public class ApplicationsController : ControllerBase
     public async Task<IActionResult> CreateContact(Guid id, CreateContactRequest request)
     {
         var command = new CreateContactCommand(
-            id, request.Name, request.Email,
-            request.Phone, request.Title, request.Notes
+            id,
+            request.Name,
+            request.Email,
+            request.Phone,
+            request.Title,
+            request.Notes
         );
         var contactId = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetById), new { id }, new { contactId });
@@ -153,8 +169,11 @@ public class ApplicationsController : ControllerBase
     public async Task<IActionResult> UploadAttachment(Guid id, UploadAttachmentRequest request)
     {
         var command = new UploadAttachmentCommand(
-            id, request.FileName, request.OriginalName,
-            request.ContentType, request.SizeBytes
+            id,
+            request.FileName,
+            request.OriginalName,
+            request.ContentType,
+            request.SizeBytes
         );
         var attachmentId = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetById), new { id }, new { attachmentId });

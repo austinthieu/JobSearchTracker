@@ -2,8 +2,8 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using Application.Auth.DTOs;
+using Application.Common.Models;
 using Application.JobApplications.DTOs;
-using Api.Tests.Integration;
 
 namespace Api.Tests.Integration;
 
@@ -82,10 +82,13 @@ public class ApplicationsTests : IClassFixture<CustomWebApplicationFactory>
         await client.PostAsJsonAsync("/api/applications", new { CompanyId = companyId, Position = "Engineer II" });
 
         var response = await client.GetAsync("/api/applications");
-        var apps = await response.Content.ReadFromJsonAsync<List<ApplicationDto>>();
+        var result = await response.Content.ReadFromJsonAsync<PaginatedList<ApplicationDto>>();
 
-        Assert.NotNull(apps);
-        Assert.Equal(2, apps.Count);
+        Assert.NotNull(result);
+        Assert.Equal(2, result.TotalCount);
+        Assert.Equal(2, result.Items.Count);
+        Assert.Equal(1, result.Page);
+        Assert.False(result.HasNextPage);
     }
 
     [Fact]
@@ -98,11 +101,11 @@ public class ApplicationsTests : IClassFixture<CustomWebApplicationFactory>
         await client2.PostAsJsonAsync("/api/applications", new { CompanyId = companyId2, Position = "Other App" });
 
         var response = await client1.GetAsync("/api/applications");
-        var apps = await response.Content.ReadFromJsonAsync<List<ApplicationDto>>();
+        var result = await response.Content.ReadFromJsonAsync<PaginatedList<ApplicationDto>>();
 
-        Assert.NotNull(apps);
-        Assert.Single(apps);
-        Assert.Equal("My App", apps[0].Position);
+        Assert.NotNull(result);
+        Assert.Single(result.Items);
+        Assert.Equal("My App", result.Items[0].Position);
     }
 
     [Fact]
@@ -223,6 +226,36 @@ public class ApplicationsTests : IClassFixture<CustomWebApplicationFactory>
         var response = await client.GetAsync("/api/applications");
 
         Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetAll_RespectsPagination()
+    {
+        var (client, companyId) = await CreateAuthenticatedClient();
+
+        await client.PostAsJsonAsync("/api/applications", new { CompanyId = companyId, Position = "Engineer I" });
+        await client.PostAsJsonAsync("/api/applications", new { CompanyId = companyId, Position = "Engineer II" });
+        await client.PostAsJsonAsync("/api/applications", new { CompanyId = companyId, Position = "Engineer III" });
+
+        // Page 1 with 2 items
+        var response1 = await client.GetAsync("/api/applications?page=1&pageSize=2");
+        var result1 = await response1.Content.ReadFromJsonAsync<PaginatedList<ApplicationDto>>();
+
+        Assert.NotNull(result1);
+        Assert.Equal(3, result1.TotalCount);
+        Assert.Equal(2, result1.Items.Count);
+        Assert.True(result1.HasNextPage);
+        Assert.False(result1.HasPreviousPage);
+
+        // Page 2 with 2 items (should have the remaining 1)
+        var response2 = await client.GetAsync("/api/applications?page=2&pageSize=2");
+        var result2 = await response2.Content.ReadFromJsonAsync<PaginatedList<ApplicationDto>>();
+
+        Assert.NotNull(result2);
+        Assert.Equal(3, result2.TotalCount);
+        Assert.Single(result2.Items);
+        Assert.False(result2.HasNextPage);
+        Assert.True(result2.HasPreviousPage);
     }
 
     // ── Detail endpoint ─────────────────────────────────────

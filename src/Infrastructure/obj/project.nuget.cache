@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "BfA0Fpb7EpU=",
+  "dgSpecHash": "+srvdefIoeo=",
   "success": true,
   "projectFilePath": "/home/cync/Work/tries/JobSearchTracker/src/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
+    "/home/cync/.nuget/packages/awssdk.core/4.0.100/awssdk.core.4.0.100.nupkg.sha512",
+    "/home/cync/.nuget/packages/awssdk.s3/4.0.100/awssdk.s3.4.0.100.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.1.1/fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "/home/cync/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
