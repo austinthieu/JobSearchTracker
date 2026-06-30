@@ -6,6 +6,8 @@
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Api.runtimeconfig.json
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Api.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Api.pdb
+/home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/AWSSDK.Core.dll
+/home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/AWSSDK.S3.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/FluentValidation.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/FluentValidation.DependencyInjectionExtensions.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Humanizer.dll
@@ -24,6 +26,7 @@
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
 /home/cync/Work/tries/JobSearchTracker/src/API/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll

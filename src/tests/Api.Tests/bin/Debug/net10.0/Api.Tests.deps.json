@@ -362,6 +362,31 @@
           "Api.Tests.dll": {}
         }
       },
+      "AWSSDK.Core/4.0.100": {
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.100.0"
+          }
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.S3/4.0.100": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.100"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.100.0"
+          }
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.S3.dll": {}
+        }
+      },
       "FluentValidation/12.1.1": {
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
@@ -1149,8 +1174,10 @@
       },
       "Infrastructure/1.0.0": {
         "dependencies": {
+          "AWSSDK.S3": "4.0.100",
           "Application": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.9",
+          "Microsoft.EntityFrameworkCore.InMemory": "10.0.9",
           "Microsoft.Extensions.Identity.Core": "10.0.9",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.2",
           "System.IdentityModel.Tokens.Jwt": "8.19.1"
@@ -3425,6 +3452,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/4.0.100": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7BqWwpzoTYsG5w7H2yuhdu7ZG2cw6GANhkKCzygGv0hoOaCXYy4fQu1satpGJ2wtTErM2aXkdo6qKDHgIeSVkA==",
+      "path": "awssdk.core/4.0.100",
+      "hashPath": "awssdk.core.4.0.100.nupkg.sha512"
+    },
+    "AWSSDK.S3/4.0.100": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Pylnc0rbL7DA0hu7F+jNLK8vfQPK8hvP6adOHM6JXUAOlkZJ+BSUCf7+9Cowtz61ripuAGImF8zcvZHY+X6vMA==",
+      "path": "awssdk.s3/4.0.100",
+      "hashPath": "awssdk.s3.4.0.100.nupkg.sha512"
     },
     "FluentValidation/12.1.1": {
       "type": "package",

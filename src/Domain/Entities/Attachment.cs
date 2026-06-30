@@ -8,6 +8,7 @@ public class Attachment : Entity
     public string OriginalName { get; private set; } = null!;
     public string ContentType { get; private set; } = null!;
     public long SizeBytes { get; private set; }
+    public string StoragePath { get; private set; } = null!;
     public DateTime UploadedAt { get; private set; }
 
     // Foreign Keys
@@ -18,9 +19,17 @@ public class Attachment : Entity
 
     private Attachment() { }
 
-    public Attachment(Guid jobApplicationId, string fileName, string originalName, string contentType, long sizeBytes)
+    public Attachment(
+        Guid jobApplicationId,
+        string storagePath,
+        string fileName,
+        string originalName,
+        string contentType,
+        long sizeBytes
+    )
     {
         JobApplicationId = jobApplicationId;
+        StoragePath = storagePath;
         FileName = fileName;
         OriginalName = originalName;
         ContentType = contentType;

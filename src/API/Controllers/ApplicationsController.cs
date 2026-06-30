@@ -166,14 +166,13 @@ public class ApplicationsController : ControllerBase
     }
 
     [HttpPost("{id:guid}/attachments")]
-    public async Task<IActionResult> UploadAttachment(Guid id, UploadAttachmentRequest request)
+    public async Task<IActionResult> UploadAttachment(Guid id, IFormFile file)
     {
         var command = new UploadAttachmentCommand(
             id,
-            request.FileName,
-            request.OriginalName,
-            request.ContentType,
-            request.SizeBytes
+            file.OpenReadStream(),
+            file.FileName,
+            file.ContentType
         );
         var attachmentId = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetById), new { id }, new { attachmentId });
@@ -184,6 +183,15 @@ public class ApplicationsController : ControllerBase
     {
         await _mediator.Send(new DeleteAttachmentCommand(id, attachmentId));
         return NoContent();
+    }
+
+    [HttpGet("{id:guid}/attachments/{attachmentId:guid}")]
+    public async Task<IActionResult> GetAttachment(Guid id, Guid attachmentId)
+    {
+        var bytes = await _mediator.Send(new GetAttachmentContentQuery(id, attachmentId));
+        if (bytes is null)
+            return NotFound();
+        return File(bytes.Data, bytes.ContentType, bytes.FileName);
     }
 }
 
@@ -220,12 +228,4 @@ public class CreateContactRequest
     public string? Phone { get; set; }
     public string? Title { get; set; }
     public string? Notes { get; set; }
-}
-
-public class UploadAttachmentRequest
-{
-    public string FileName { get; set; } = null!;
-    public string OriginalName { get; set; } = null!;
-    public string ContentType { get; set; } = null!;
-    public long SizeBytes { get; set; }
 }

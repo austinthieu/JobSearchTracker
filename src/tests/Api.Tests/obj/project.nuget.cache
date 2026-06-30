@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "pRvnwAXLLFA=",
+  "dgSpecHash": "Gb3jqC91YQg=",
   "success": true,
   "projectFilePath": "/home/cync/Work/tries/JobSearchTracker/src/tests/Api.Tests/Api.Tests.csproj",
   "expectedPackageFiles": [
+    "/home/cync/.nuget/packages/awssdk.core/4.0.100/awssdk.core.4.0.100.nupkg.sha512",
+    "/home/cync/.nuget/packages/awssdk.s3/4.0.100/awssdk.s3.4.0.100.nupkg.sha512",
     "/home/cync/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.1.1/fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",

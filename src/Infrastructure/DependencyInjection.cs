@@ -1,4 +1,7 @@
 using System.Text;
+using Amazon;
+using Amazon.Runtime;
+using Amazon.S3;
 using Application.Common.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Services;
@@ -17,23 +20,29 @@ public static class DependencyInjection
         IConfiguration configuration
     )
     {
+        // Database
         var connectionString = configuration.GetConnectionString("Default");
         var useInMemory = configuration.GetValue<bool>("UseInMemoryDatabase");
 
         if (useInMemory)
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase("TestDB"));
+                options.UseInMemoryDatabase("TestDB")
+            );
         else
-            services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(connectionString));
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseNpgsql(connectionString)
+            );
 
         services.AddScoped<IApplicationDbContext>(sp =>
             sp.GetRequiredService<ApplicationDbContext>()
         );
 
+        // Register services
         services.AddScoped<ITokenService, JwtService>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddHttpContextAccessor();
 
+        // JWT
         services
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
@@ -53,6 +62,30 @@ public static class DependencyInjection
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
                 };
             });
+
+        // Amazon S3
+        services.AddSingleton<IAmazonS3>(sp =>
+        {
+            var config = sp.GetRequiredService<IConfiguration>();
+            var endpoint = config["S3:Endpoint"];
+            var useSsl = config.GetValue<bool>("S3:UseSsl");
+
+            var s3Config = new AmazonS3Config
+            {
+                RegionEndpoint = RegionEndpoint.USWest1,
+                ForcePathStyle = true,
+            };
+
+            if (!string.IsNullOrEmpty(endpoint))
+            {
+                s3Config.ServiceURL = endpoint;
+                s3Config.UseHttp = !useSsl;
+            }
+
+            return new AmazonS3Client(new AnonymousAWSCredentials(), s3Config);
+        });
+
+        services.AddScoped<IFileStorageService, S3FileStorageService>();
 
         return services;
     }

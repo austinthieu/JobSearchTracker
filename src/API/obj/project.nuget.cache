@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0QPAM5divZw=",
+  "dgSpecHash": "eeqKh3dS0hI=",
   "success": true,
   "projectFilePath": "/home/cync/Work/tries/JobSearchTracker/src/API/Api.csproj",
   "expectedPackageFiles": [
+    "/home/cync/.nuget/packages/awssdk.core/4.0.100/awssdk.core.4.0.100.nupkg.sha512",
+    "/home/cync/.nuget/packages/awssdk.s3/4.0.100/awssdk.s3.4.0.100.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/home/cync/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.1.1/fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "/home/cync/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
@@ -23,6 +25,7 @@
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.9/microsoft.entityframeworkcore.abstractions.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.analyzers/10.0.9/microsoft.entityframeworkcore.analyzers.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.design/10.0.9/microsoft.entityframeworkcore.design.10.0.9.nupkg.sha512",
+    "/home/cync/.nuget/packages/microsoft.entityframeworkcore.inmemory/10.0.9/microsoft.entityframeworkcore.inmemory.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.entityframeworkcore.relational/10.0.9/microsoft.entityframeworkcore.relational.10.0.9.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/home/cync/.nuget/packages/microsoft.extensions.dependencymodel/10.0.9/microsoft.extensions.dependencymodel.10.0.9.nupkg.sha512",

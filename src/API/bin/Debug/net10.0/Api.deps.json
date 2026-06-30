@@ -18,6 +18,25 @@
           "Api.dll": {}
         }
       },
+      "AWSSDK.Core/4.0.100": {
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.100.0"
+          }
+        }
+      },
+      "AWSSDK.S3/4.0.100": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.100"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.100.0"
+          }
+        }
+      },
       "FluentValidation/12.1.1": {
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
@@ -413,6 +432,17 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/10.0.9": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.9"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "10.0.9.0",
+            "fileVersion": "10.0.926.27113"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/10.0.9": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "10.0.9"
@@ -695,8 +725,10 @@
       },
       "Infrastructure/1.0.0": {
         "dependencies": {
+          "AWSSDK.S3": "4.0.100",
           "Application": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.9",
+          "Microsoft.EntityFrameworkCore.InMemory": "10.0.9",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.2",
           "System.IdentityModel.Tokens.Jwt": "8.19.1"
         },
@@ -714,6 +746,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/4.0.100": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7BqWwpzoTYsG5w7H2yuhdu7ZG2cw6GANhkKCzygGv0hoOaCXYy4fQu1satpGJ2wtTErM2aXkdo6qKDHgIeSVkA==",
+      "path": "awssdk.core/4.0.100",
+      "hashPath": "awssdk.core.4.0.100.nupkg.sha512"
+    },
+    "AWSSDK.S3/4.0.100": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Pylnc0rbL7DA0hu7F+jNLK8vfQPK8hvP6adOHM6JXUAOlkZJ+BSUCf7+9Cowtz61ripuAGImF8zcvZHY+X6vMA==",
+      "path": "awssdk.s3/4.0.100",
+      "hashPath": "awssdk.s3.4.0.100.nupkg.sha512"
     },
     "FluentValidation/12.1.1": {
       "type": "package",
@@ -833,6 +879,13 @@
       "sha512": "sha512-NxgqhpB89S6BViMku9B476KopBumtk0IQ4/iVn2GeeUBW9SyzLvWwOR0zPgcooAtRlR0UVzXkaUs71gYHSAbHg==",
       "path": "microsoft.entityframeworkcore.design/10.0.9",
       "hashPath": "microsoft.entityframeworkcore.design.10.0.9.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/10.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lvlLJ7kgGivXApixK4FN7pB/aZZJ+bqdNRv2jLR0K0t2ZFIUwNylF1Mo6tMQAN8/2FsNKbv7U4S4FgSdfFtPIQ==",
+      "path": "microsoft.entityframeworkcore.inmemory/10.0.9",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.10.0.9.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/10.0.9": {
       "type": "package",
